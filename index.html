@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Ajedrez</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="chessboard">
+        <!-- Generar las celdas del tablero -->
+        <script>
+            for (let i = 0; i < 8; i++) {
+                for (let j = 0; j < 8; j++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'cell';
+                    cell.id = `cell-${i}-${j}`;
+                    if ((i + j) % 2 === 0) {
+                        cell.classList.add('white');
+                    } else {
+                        cell.classList.add('black');
+                    }
+                    document.getElementById('chessboard').appendChild(cell);
+                }
+            }
+        </script>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
